@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        nav {
+            background: #111;
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+            color: #f5b942;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .hero {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #ddd;
+        }
+
+        .products {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: white;
+            width: 280px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-box {
+            height: 180px;
+            background: #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        button {
+            background: #f5b942;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Hussain Store</h2>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <<section class="hero">
+
+    <p style="color:#f5b942;font-weight:bold;">
+        ✨ NEW COLLECTION 2026
+    </p>
+
+    <h1>Upgrade Your Style</h1>
+
+    <p>
+        Discover premium clothing designed
+        for comfort, confidence and style.
+    </p>
+
+    <p style="font-weight:bold;">
+        🔥 Special Launch Offer — Up to 20% OFF
+    </p>
+
+    <a href="#products"
+       style="display:inline-block;
+       margin-top:15px;
+       background:#f5b942;
+       color:#111;
+       padding:14px 30px;
+       border-radius:8px;
+       text-decoration:none;
+       font-weight:bold;">
+       Shop Now
+    </a>
+
+    </section>
+
+    <section class="products" id="products">
+
+        <h2>Our Products</h2>
+
+        <div class="product-container">
+
+            <div class="product">
+                <<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" style="width:100%;height:180px;object-fit:cover;border-radius:10px;">
+                <h3>Premium T-Shirt</h3>
+                <p>Comfortable everyday T-shirt.</p>
+                <p class="price">Rs. 1,499</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product">
+                <div class="product-box">🧥</div>
+                <h3>Classic Jacket</h3>
+                <p>Modern stylish jacket.</p>
+                <p class="price">Rs. 3,999</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product">
+                <div class="product-box">👖</div>
+                <h3>Classic Jeans</h3>
+                <p>Comfortable premium jeans.</p>
+                <p class="price">Rs. 2,499</p>
+                <a href="https://wa.me/923001234567?text=Assalam%20o%20Alaikum%2C%20mujhe%20Premium%20T-Shirt%20order%20karni%20hai." 
+style="display:inline-block;background:#25D366;color:white;padding:12px 25px;border-radius:7px;text-decoration:none;font-weight:bold;">
+Order on WhatsApp
+                </a>
+            </div>
+
+        </div>
+<section style="padding:40px 20px;text-align:center;background:#eee;">
+
+    <h2>What Our Customers Say</h2>
+
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+
+        <div style="background:white;padding:20px;border-radius:10px;max-width:280px;">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>"Very comfortable and good quality."</p>
+            <strong>— Ahmed</strong>
+        </div>
+
+        <div style="background:white;padding:20px;border-radius:10px;max-width:280px;">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>"Beautiful design and fast delivery."</p>
+            <strong>— Ali</strong>
+        </div>
+
+        <div style="background:white;padding:20px;border-radius:10px;max-width:280px;">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>"I really liked the quality."</p>
+            <strong>— Hamza</strong>
+        </div>
+
+    </div>
+
+</section>
+    </section>
+
+    <section id="contact" style="text-align:center; padding:40px;">
+        <h2>Contact Us</h2>
+        <p>WhatsApp: 0300-0000000</p>
+    </section>
+<footer style="background:#111;color:white;text-align:center;padding:30px 20px;">
+    <h3 style="color:#f5b942;">Hussain Store</h3>
+
+    <p>Premium clothing for your everyday style.</p>
+
+    <p>WhatsApp: +92 300 1234567</p>
+
+    <p style="font-size:13px;color:#aaa;">
+        © 2026 Hussain Store. All Rights Reserved.
+    </p>
+</footer>
+</body>
+</html>
