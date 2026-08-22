@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIRÉ — Premium Fashion</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    font-family:Arial,sans-serif;
+    background:#080808;
+    color:#fff;
+}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer}
+
+.top{
+    background:#c9a45c;
+    color:#000;
+    text-align:center;
+    padding:9px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,8,8,.95);
+    border-bottom:1px solid #222;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:900;
+    letter-spacing:4px;
+}
+
+.logo span{color:#d6b56b}
+
+.navlinks{
+    display:flex;
+    gap:25px;
+}
+
+.navlinks a{
+    color:#ddd;
+    font-size:14px;
+}
+
+.navlinks a:hover{color:#d6b56b}
+
+.icons{
+    display:flex;
+    gap:10px;
+}
+
+.icon{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:1px solid #333;
+    background:#111;
+    color:#fff;
+}
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content{
+    max-width:650px;
+    padding:60px 7%;
+}
+
+.tag{
+    color:#d6b56b;
+    letter-spacing:3px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,90px);
+    line-height:.95;
+    margin-bottom:25px;
+}
+
+.hero h1 span{color:#d6b56b}
+
+.hero p{
+    color:#ccc;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:4px;
+    font-weight:bold;
+    margin-right:8px;
+}
+
+.gold{
+    background:#d6b56b;
+    color:#000;
+}
+
+.darkbtn{
+    border:1px solid #777;
+    color:#fff;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    padding:25px 6%;
+    background:#101010;
+    border-bottom:1px solid #222;
+}
+
+.feature{
+    text-align:center;
+    color:#aaa;
+    font-size:13px;
+}
+
+.feature b{
+    display:block;
+    color:#fff;
+    margin-bottom:5px;
+}
+
+section{
+    padding:85px 6%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title small{
+    color:#d6b56b;
+    letter-spacing:3px;
+}
+
+.title h2{
+    font-size:45px;
+    margin-top:8px;
+}
+
+.search{
+    max-width:500px;
+    margin:0 auto 25px;
+}
+
+.search input{
+    width:100%;
+    padding:15px;
+    background:#111;
+    color:#fff;
+    border:1px solid #333;
+    border-radius:5px;
+    outline:none;
+}
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.filter{
+    background:#111;
+    color:#ccc;
+    border:1px solid #333;
+    padding:10px 18px;
+    border-radius:30px;
+}
+
+.filter.active,
+.filter:hover{
+    background:#d6b56b;
+    color:#000;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #222;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#d6b56b;
+}
+
+.pic{
+    height:330px;
+    position:relative;
+    overflow:hidden;
+}
+
+.pic img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.card:hover img{transform:scale(1.06)}
+
+.badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#d6b56b;
+    color:#000;
+    padding:6px 10px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.heart{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:0;
+    background:rgba(0,0,0,.6);
+    color:#fff;
+    font-size:18px;
+}
+
+.info{padding:18px}
+
+.stars{
+    color:#d6b56b;
+    font-size:13px;
+}
+
+.info h3{margin:7px 0}
+
+.info p{
+    color:#888;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.price{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.price strong{font-size:18px}
+
+.add{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:0;
+    background:#d6b56b;
+    font-size:22px;
+}
+
+.banner{
+    min-height:380px;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1500&q=85")
+    center/cover;
+}
+
+.banner-content{
+    max-width:600px;
+}
+
+.banner h2{
+    font-size:55px;
+    line-height:1;
+    margin:15px 0;
+}
+
+.banner p{
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-img{
+    min-height:500px;
+    background:
+    url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85")
+    center/cover;
+}
+
+.about-text p{
+    color:#999;
+    line-height:1.8;
+    margin:20px 0;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:30px;
+}
+
+.stat{
+    background:#111;
+    border:1px solid #222;
+    padding:20px;
+    text-align:center;
+    color:#999;
+}
+
+.stat b{
+    display:block;
+    color:#d6b56b;
+    font-size:25px;
+}
+
+.reviews{
+    background:#101010;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:#151515;
+    border:1px solid #222;
+    padding:25px;
+}
+
+.review .stars{margin-bottom:15px}
+
+.review p{
+    color:#bbb;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.faq{
+    max-width:800px;
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid #333;
+}
+
+.faq-q{
+    width:100%;
+    background:none;
+    border:0;
+    color:#fff;
+    padding:20px 0;
+    display:flex;
+    justify-content:space-between;
+    text-align:left;
+    font-weight:bold;
+}
+
+.faq-a{
+    display:none;
+    color:#999;
+    padding-bottom:20px;
+    line-height:1.6;
+}
+
+.faq-item.open .faq-a{display:block}
+
+.newsletter{
+    background:#d6b56b;
+    color:#000;
+    text-align:center;
+}
+
+.newsletter h2{font-size:40px}
+
+.newsletter p{
+    margin:10px auto 25px;
+    max-width:600px;
+}
+
+.newsletter input{
+    padding:15px;
+    width:min(350px,90%);
+    border:0;
+    outline:0;
+}
+
+.newsletter button{
+    padding:15px 20px;
+    background:#000;
+    color:#fff;
+    border:0;
+}
+
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.contact-box{
+    background:#111;
+    border:1px solid #222;
+    padding:30px;
+}
+
+.contact-box p{
+    color:#999;
+    margin:12px 0;
+}
+
+footer{
+    background:#050505;
+    border-top:1px solid #222;
+    padding:60px 6% 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+footer p,footer li{
+    color:#777;
+    font-size:14px;
+    line-height:2;
+}
+
+footer ul{list-style:none}
+
+.bottom{
+    border-top:1px solid #222;
+    margin-top:40px;
+    padding-top:20px;
+    color:#666;
+    font-size:12px;
+}
+
+/* CART */
+
+.cart{
+    position:fixed;
+    right:-420px;
+    top:0;
+    width:min(420px,100%);
+    height:100vh;
+    background:#111;
+    z-index:3000;
+    transition:.3s;
+    border-left:1px solid #333;
+    padding:25px;
+    overflow:auto;
+}
+
+.cart.open{right:0}
+
+.cart-head{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:25px;
+}
+
+.cart-item{
+    display:flex;
+    gap:12px;
+    border-bottom:1px solid #333;
+    padding:15px 0;
+}
+
+.cart-item img{
+    width:65px;
+    height:75px;
+    object-fit:cover;
+}
+
+.cart-item p{color:#d6b56b}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:bold;
+    margin:25px 0;
+}
+
+.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:2500;
+}
+
+.overlay.show{display:block}
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translate(-50%,100px);
+    background:#fff;
+    color:#000;
+    padding:14px 22px;
+    z-index:5000;
+    transition:.3s;
+    border-radius:4px;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+}
+
+@media(max-width:900px){
+    .navlinks{display:none}
+    .products{grid-template-columns:repeat(2,1fr)}
+    .features{grid-template-columns:repeat(2,1fr)}
+    .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:600px){
+    section{padding:60px 5%}
+
+    .hero{
+        min-height:580px;
+    }
+
+    .hero-content{
+        padding:50px 5%;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .pic{height:230px}
+
+    .info{padding:12px}
+
+    .info h3{font-size:14px}
+
+    .price strong{font-size:14px}
+
+    .about,
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .about-img{min-height:400px}
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .banner h2{
+        font-size:42px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+    ✨ FREE SHIPPING ON ORDERS OVER RS. 5,000
+</div>
+
+<nav>
+
+    <a href="#" class="logo">
+        NOIR<span>É</span>
+    </a>
+
+    <div class="navlinks">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="icons">
+
+        <button class="icon" onclick="searchFocus()">🔍</button>
+
+        <button class="icon" onclick="openCart()">
+            🛒 <span id="count">0</span>
+        </button>
+
+    </div>
+
+</nav>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="tag">THE NEW STANDARD OF STYLE</div>
+
+        <h1>
+            DRESS WITH
+            <span>CONFIDENCE.</span>
+        </h1>
+
+        <p>
+            Premium clothing designed for modern lifestyles.
+            Discover timeless pieces, refined details and
+            effortless everyday style.
+        </p>
+
+        <a href="#shop" class="btn gold">
+            SHOP COLLECTION →
+        </a>
+
+        <a href="#about" class="btn darkbtn">
+            OUR STORY
+        </a>
+
+    </div>
+
+</section>
+
+<div class="features">
+
+    <div class="feature">
+        <b>🚚 FAST DELIVERY</b>
+        Nationwide shipping
+    </div>
+
+    <div class="feature">
+        <b>✓ PREMIUM QUALITY</b>
+        Quality checked products
+    </div>
+
+    <div class="feature">
+        <b>↩ EASY RETURNS</b>
+        Simple return policy
+    </div>
+
+    <div class="feature">
+        <b>🔒 SECURE SHOPPING</b>
+        Safe shopping experience
+    </div>
+
+</div>
+
+<section id="shop">
+
+    <div class="title">
+        <small>OUR COLLECTION</small>
+        <h2>Featured Products</h2>
+    </div>
+
+    <div class="search">
+        <input
+            id="search"
+            type="text"
+            placeholder="🔍 Search products..."
+            oninput="searchProducts()"
+        >
+    </div>
+
+    <div class="filters">
+
+        <button class="filter active" onclick="filter('all',this)">
+            All
+        </button>
+
+        <button class="filter" onclick="filter('men',this)">
+            Men
+        </button>
+
+        <button class="filter" onclick="filter('women',this)">
+            Women
+        </button>
+
+        <button class="filter" onclick="filter('jacket',this)">
+            Jackets
+        </button>
+
+        <button class="filter" onclick="filter('shirt',this)">
+            Shirts
+        </button>
+
+    </div>
+
+    <div class="products" id="products"></div>
+
+</section>
+
+<section>
+
+    <div class="banner">
+
+        <div class="banner-content">
+
+            <div class="tag">LIMITED COLLECTION</div>
+
+            <h2>Effortless.<br>Timeless.<br>Yours.</h2>
+
+            <p>
+                Upgrade your wardrobe with selected pieces
+                from our latest collection.
+            </p>
+
+            <a href="#shop" class="btn gold">
+                SHOP NOW
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="about-img"></div>
+
+        <div class="about-text">
+
+            <div class="tag">OUR STORY</div>
+
+            <h2 style="font-size:45px;">
+                Quality that speaks
+                for itself.
+            </h2>
+
+            <p>
+                NOIRÉ is a modern fashion concept focused on
+                clean design, premium materials and timeless style.
+            </p>
+
+            <p>
+                Our mission is simple: create clothing that
+                makes you feel confident every day.
+            </p>
+
+            <a href="#contact" class="btn gold">
+                CONTACT US
+            </a>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <b>5K+</b>
+                    Customers
+                </div>
+
+                <div class="stat">
+                    <b>4.9★</b>
+                    Rating
+                </div>
+
+                <div class="stat">
+                    <b>20+</b>
+                    Products
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="reviews" id="reviews">
+
+    <div class="title">
+
+        <small>CUSTOMER LOVE</small>
+
+        <h2>What Customers Say</h2>
+
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                “Amazing quality and very stylish.
+                The jacket looks even better in person.”
+            </p>
+
+            <b>— Ahmed R.</b>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                “Fast delivery and excellent customer service.
+                I will definitely order again.”
+            </p>
+
+            <b>— Hamza K.</b>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                “Very good quality for the price.
+                Highly recommended.”
+            </p>
+
+            <b>— Ali S.</b>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="title">
+
+        <small>HELP CENTER</small>
+
+        <h2>FAQ</h2>
+
+    </div>
+
+    <div class="faq">
+
+        <div class="faq-item">
+
+            <button class="faq-q" onclick="faq(this)">
+                How long does delivery take?
+                <span>+</span>
+            </button>
+
+            <div class="faq-a">
+                Delivery time depends on your location.
+                The store can update this according to its
+                actual delivery policy.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-q" onclick="faq(this)">
+                Can I return my order?
+                <span>+</span>
+            </button>
+
+            <div class="faq-a">
+                Yes, according to the store's return policy.
+                Contact customer support for help.
+            </div>
+
+        </div>
+
+        <div class="faq-item">
+
+            <button class="faq-q" onclick="faq(this)">
+                How can I order?
+                <span>+</span>
+            </button>
+
+            <div class="faq-a">
+                Add your products to the cart and use
+                WhatsApp checkout.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="newsletter">
+
+    <h2>Join Our Community</h2>
+
+    <p>
+        Get new collection updates and special offers.
+    </p>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Your email address"
+    >
+
+    <button onclick="subscribe()">
+        SUBSCRIBE
+    </button>
+
+</section>
+
+<section id="contact">
+
+    <div class="title">
+
+        <small>GET IN TOUCH</small>
+
+        <h2>Contact Us</h2>
+
+    </div>
+
+    <div class="contact">
+
+        <div class="contact-box">
+
+            <h3>Customer Support</h3>
+
+            <p>📱 WhatsApp: +92 300 1234567</p>
+
+            <p>📧 Email: hello@noire-fashion.com</p>
+
+            <p>📍 Pakistan</p>
+
+            <a
+                class="btn gold"
+                href="https://wa.me/923001234567"
+                target="_blank"
+            >
+                WHATSAPP US
+            </a>
+
+        </div>
+
+        <div class="contact-box">
+
+            <h3>Business Hours</h3>
+
+            <p>Monday — Saturday</p>
+
+            <p>10:00 AM — 8:00 PM</p>
+
+            <p>Sunday — Closed</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo">
+                NOIR<span>É</span>
+            </div>
+
+            <p style="margin-top:15px;">
+                Premium fashion for modern lifestyles.
+                Timeless design. Premium quality.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Shop</h3>
+
+            <ul>
+                <li>New Arrivals</li>
+                <li>Men</li>
+                <li>Women</li>
+                <li>Jackets</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Company</h3>
+
+            <ul>
+                <li>About</li>
+                <li>Reviews</li>
+                <li>Contact</li>
+                <li>Privacy</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Follow Us</h3>
+
+            <ul>
+                <li>Instagram</li>
+                <li>Facebook</li>
+                <li>TikTok</li>
+                <li>WhatsApp</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        © 2026 NOIRÉ — Premium Fashion Store
+    </div>
+
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<div class="cart" id="cart">
+
+    <div class="cart-head">
+
+        <h2>Your Cart</h2>
+
+        <button class="icon" onclick="closeCart()">×</button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="total">
+
+        <span>Total</span>
+
+        <span id="total">Rs. 0</span>
+
+    </div>
+
+    <button
+        class="btn gold"
+        style="width:100%;border:0;"
+        onclick="whatsappOrder()"
+    >
+        ORDER ON WHATSAPP
+    </button>
+
+</div>
+
+<div class="toast" id="toast">
+    Added to cart ✓
+</div>
+
+<script>
+
+const products = [
+
+{
+id:1,
+name:"Premium Black T-Shirt",
+category:"shirt",
+gender:"men",
+price:1499,
+image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85",
+badge:"SALE"
+},
+
+{
+id:2,
+name:"Classic Leather Jacket",
+category:"jacket",
+gender:"men",
+price:5999,
+image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=85",
+badge:"BESTSELLER"
+},
+
+{
+id:3,
+name:"Elegant White Shirt",
+category:"shirt",
+gender:"women",
+price:2299,
+image:"https://images.unsplash.com/photo-1605763240000-7e93b172d754?auto=format&fit=crop&w=700&q=85",
+badge:"NEW"
+},
+
+{
+id:4,
+name:"Denim Jacket",
+category:"jacket",
+gender:"men",
+price:3499,
+image:"https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=700&q=85",
+badge:"TRENDING"
+},
+
+{
+id:5,
+name:"Luxury Beige Coat",
+category:"jacket",
+gender:"women",
+price:6499,
+image:"https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=700&q=85",
+badge:"LIMITED"
+},
+
+{
+id:6,
+name:"Relaxed Premium Tee",
+category:"shirt",
+gender:"women",
+price:1799,
+image:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=700&q=85",
+badge:"NEW"
+},
+
+{
+id:7,
+name:"Urban Black Jacket",
+category:"jacket",
+gender:"men",
+price:4299,
+image:"https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=700&q=85",
+badge:"HOT"
+},
+
+{
+id:8,
+name:"Classic Denim Jeans",
+category:"men",
+gender:"men",
+price:2799,
+image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85",
+badge:"POPULAR"
+}
+
+];
+
+let cart=[];
+
+function render(list=products){
+
+const box=document.getElementById("products");
+
+box.innerHTML="";
+
+list.forEach(p=>{
+
+box.innerHTML+=`
+
+<div class="card">
+
+<div class="pic">
+
+<img src="${p.image}" alt="${p.name}">
+
+<span class="badge">${p.badge}</span>
+
+<button class="heart"
+onclick="this.innerText=this.innerText==='♡'?'♥':'♡'">
+♡
+</button>
+
+</div>
+
+<div class="info">
+
+<div class="stars">★★★★★</div>
+
+<h3>${p.name}</h3>
+
+<p>Premium quality fashion piece.</p>
+
+<div class="price">
+
+<strong>Rs. ${p.price.toLocaleString()}</strong>
+
+<button class="add"
+onclick="add(${p.id})">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function add(id){
+
+const p=products.find(x=>x.id===id);
+
+const existing=cart.find(x=>x.id===id);
+
+if(existing){
+existing.qty++;
+}else{
+cart.push({...p,qty:1});
+}
+
+update();
+
+toast(p.name+" added ✓");
+
+}
+
+function update(){
+
+document.getElementById("count").innerText=
+cart.reduce((a,b)=>a+b.qty,0);
+
+const box=document.getElementById("cartItems");
+
+box.innerHTML="";
+
+let total=0;
+
+cart.forEach(p=>{
+
+total+=p.price*p.qty;
+
+box.innerHTML+=`
+
+<div class="cart-item">
+
+<img src="${p.image}">
+
+<div>
+
+<b>${p.name}</b>
+
+<p>Rs. ${p.price.toLocaleString()}</p>
+
+<p>Quantity: ${p.qty}</p>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("total").innerText=
+"Rs. "+total.toLocaleString();
+
+if(cart.length===0){
+box.innerHTML=
+"<p style='color:#777;text-align:center;'>Your cart is empty.</p>";
+}
+
+}
+
+function openCart(){
+
+document.getElementById("cart").classList.add("open");
+
+document.getElementById("overlay").classList.add("show");
+
+}
+
+function closeCart(){
+
+document.getElementById("cart").classList.remove("open");
+
+document.getElementById("overlay").classList.remove("show");
+
+}
+
+function whatsappOrder(){
+
+if(cart.length===0){
+
+toast("Cart is empty");
+
+return;
+
+}
+
+let message="Assalam o Alaikum, I want to order:%0A%0A";
+
+let total=0;
+
+cart.forEach(p=>{
+
+message+=
+p.name+
+" x"+p.qty+
+" - Rs. "+
+(p.price*p.qty).toLocaleString()+
+"%0A";
+
+total+=p.price*p.qty;
+
+});
+
+message+="%0ATotal: Rs. "+total.toLocaleString();
+
+window.open(
+"https://wa.me/923001234567?text="+message,
+"_blank"
+);
+
+}
+
+function filter(type,button){
+
+document.querySelectorAll(".filter")
+.forEach(x=>x.classList.remove("active"));
+
+button.classList.add("active");
+
+if(type==="all"){
+render(products);
+return;
+}
+
+render(products.filter(p=>
+p.gender===type || p.category===type
+));
+
+}
+
+function searchProducts(){
+
+const q=document.getElementById("search")
+.value.toLowerCase();
+
+render(products.filter(p=>
+p.name.toLowerCase().includes(q) ||
+p.category.includes(q) ||
+p.gender.includes(q)
+));
+
+}
+
+function searchFocus(){
+
+document.getElementById("search").focus();
+
+document.getElementById("shop")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+function faq(btn){
+
+const item=btn.parentElement;
+
+item.classList.toggle("open");
+
+btn.querySelector("span").innerText=
+item.classList.contains("open")?"−":"+";
+
+}
+
+function subscribe(){
+
+const email=document.getElementById("email").value;
+
+if(!email){
+toast("Enter your email");
+return;
+}
+
+toast("Thanks for subscribing ✓");
+
+document.getElementById("email").value="";
+
+}
+
+function toast(text){
+
+const t=document.getElementById("toast");
+
+t.innerText=text;
+
+t.classList.add("show");
+
+setTimeout(()=>{
+t.classList.remove("show");
+},2200);
+
+}
+
+render();
+
+update();
+
+</script>
+
+</body>
+</html>
